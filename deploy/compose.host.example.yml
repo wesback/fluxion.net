@@ -10,10 +10,10 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=proxy
-      - traefik.http.routers.my-service.rule=Host(`my-service.example.com`)
-      - traefik.http.routers.my-service.entrypoints=websecure
-      - traefik.http.routers.my-service.tls.certresolver=letsencrypt
-      - traefik.http.services.my-service.loadbalancer.server.port=3000
+      - traefik.http.routers.fluxion.rule=Host(`fluxion.example.com`)
+      - traefik.http.routers.fluxion.entrypoints=websecure
+      - traefik.http.routers.fluxion.tls.certresolver=letsencrypt
+      - traefik.http.services.fluxion.loadbalancer.server.port=3000
 
 networks:
   proxy:

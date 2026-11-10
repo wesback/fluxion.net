@@ -21,10 +21,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: my-service-api
+          - name: fluxion-api
             context: .
-            dockerfile: src/MyService.Api/Dockerfile
-          - name: my-service-web
+            dockerfile: src/Fluxion.Api/Dockerfile
+          - name: fluxion-web
             context: web
             dockerfile: web/Dockerfile
     steps:

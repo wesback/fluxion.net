@@ -8,7 +8,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: src/MyService.Api/Dockerfile
+      dockerfile: src/Fluxion.Api/Dockerfile
     ports:
       - "8080:8080"
     environment:
@@ -20,7 +20,7 @@ services:
     image: daprio/daprd:1.18.10
     command:
       - ./daprd
-      - --app-id=my-service-api
+      - --app-id=fluxion-api
       - --app-port=8080
       - --dapr-http-port=3500
       - --dapr-grpc-port=50001

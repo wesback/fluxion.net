@@ -4,14 +4,14 @@ WORKDIR /repo
 
 # Restore first so the layer is cached until a project file changes
 COPY global.json Directory.Build.props .editorconfig ./
-COPY src/MyService.Domain/*.csproj src/MyService.Domain/
-COPY src/MyService.Application/*.csproj src/MyService.Application/
-COPY src/MyService.Infrastructure/*.csproj src/MyService.Infrastructure/
-COPY src/MyService.Api/*.csproj src/MyService.Api/
-RUN dotnet restore src/MyService.Api/MyService.Api.csproj
+COPY src/Fluxion.Domain/*.csproj src/Fluxion.Domain/
+COPY src/Fluxion.Application/*.csproj src/Fluxion.Application/
+COPY src/Fluxion.Infrastructure/*.csproj src/Fluxion.Infrastructure/
+COPY src/Fluxion.Api/*.csproj src/Fluxion.Api/
+RUN dotnet restore src/Fluxion.Api/Fluxion.Api.csproj
 
 COPY src/ src/
-RUN dotnet publish src/MyService.Api/MyService.Api.csproj \
+RUN dotnet publish src/Fluxion.Api/Fluxion.Api.csproj \
     --configuration Release --no-restore --output /app \
     -p:OpenApiGenerateDocuments=false
 
@@ -22,4 +22,4 @@ COPY --from=build /app .
 USER $APP_UID
 ENV ASPNETCORE_HTTP_PORTS=8080
 EXPOSE 8080
-ENTRYPOINT ["dotnet", "MyService.Api.dll"]
+ENTRYPOINT ["dotnet", "Fluxion.Api.dll"]

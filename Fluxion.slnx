@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Fluxion.Api/Fluxion.Api.csproj" />
+    <Project Path="src/Fluxion.Application/Fluxion.Application.csproj" />
+    <Project Path="src/Fluxion.Domain/Fluxion.Domain.csproj" />
+    <Project Path="src/Fluxion.Infrastructure/Fluxion.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Fluxion.Api.IntegrationTests/Fluxion.Api.IntegrationTests.csproj" />
+    <Project Path="tests/Fluxion.Application.Tests/Fluxion.Application.Tests.csproj" />
+    <Project Path="tests/Fluxion.Domain.Tests/Fluxion.Domain.Tests.csproj" />
+  </Folder>
+</Solution>
