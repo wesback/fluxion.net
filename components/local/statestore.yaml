@@ -1,0 +1,12 @@
+# Local development: the app's own Postgres with dev credentials.
+# Production uses the same component name; see components/prod/statestore.yaml.
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: statestore
+spec:
+  type: state.postgresql
+  version: v2
+  metadata:
+    - name: connectionString
+      value: "host=postgres port=5432 user=app password=app database=app sslmode=disable"
