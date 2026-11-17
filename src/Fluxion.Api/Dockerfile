@@ -15,7 +15,7 @@ RUN dotnet publish src/Fluxion.Api/Fluxion.Api.csproj \
     --configuration Release --no-restore --output /app \
     -p:OpenApiGenerateDocuments=false
 
-FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:11.0 AS runtime
 WORKDIR /app
 COPY --from=build /app .
 # Non-root user built into the official .NET images
