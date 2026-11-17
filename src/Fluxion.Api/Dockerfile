@@ -1,5 +1,5 @@
 # Build context: repository root (see docker-compose.yml and .github/workflows/docker.yml)
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:11.0 AS build
 WORKDIR /repo
 
 # Restore first so the layer is cached until a project file changes
