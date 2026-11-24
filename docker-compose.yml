@@ -17,7 +17,7 @@ services:
       DAPR_GRPC_PORT: "50001"
 
   api-dapr:
-    image: daprio/daprd:1.18.10
+    image: daprio/daprd:1.18.11
     command:
       - ./daprd
       - --app-id=fluxion-api
